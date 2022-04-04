@@ -1,0 +1,17 @@
+ITEI_calculation <- function(A.scores, B.scores, test.stat= "A-B") 
+{
+  obs.value = 0
+  A_ITEI = mean(tail(A.scores,3))
+  B_ITEI = mean(head(B.scores,3))
+  {
+    if(test.stat == "A-B")
+    {
+      obs.value = A_ITEI - B_ITEI
+    }
+    if(test.stat == "B-A")
+    {
+      obs.value = B_ITEI - A_ITEI
+    }
+  }
+  return(obs.value)
+} 
